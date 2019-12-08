@@ -8,12 +8,13 @@ import java.util.List;
 public class Interview {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int interviewId;
+    private Integer interviewId;
     @OneToOne(cascade = CascadeType.ALL)
     private Person person;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Question> questions;
     private String companyName;
+    private Date interviewDate;
 
     public String getCompanyName() {
         return companyName;
@@ -31,17 +32,15 @@ public class Interview {
         this.interviewDate = interviewDate;
     }
 
-    private Date interviewDate;
+    public Integer getInterviewId() {
+		return interviewId;
+	}
 
-    public int getInterviewId() {
-        return interviewId;
-    }
+	public void setInterviewId(Integer interviewId) {
+		this.interviewId = interviewId;
+	}
 
-    public void setInterviewId(int interviewId) {
-        this.interviewId = interviewId;
-    }
-
-    public Person getPerson() {
+	public Person getPerson() {
         return person;
     }
 

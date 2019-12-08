@@ -10,13 +10,14 @@ import java.util.List;
 @Service
 public class InterviewService {
 
-    private InterviewRepository interviewRepository;
-    @Autowired
-    public InterviewService(InterviewRepository interviewRepository) {
-        this.interviewRepository=interviewRepository;
-    }
+	private InterviewRepository interviewRepository;
 
-    public List<Interview> getInterviews(){
-        return interviewRepository.getInterviews();
-    }
+	@Autowired
+	public InterviewService(InterviewRepository interviewRepository) {
+		this.interviewRepository = interviewRepository;
+	}
+
+	public List<Interview> getInterviews() {
+		return interviewRepository.getInterviews();
+	}
 }
